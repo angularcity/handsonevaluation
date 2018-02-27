@@ -1,0 +1,17 @@
+
+{
+  "HOME": {
+    "NAVLIST1": "Test 1 - Disposition réactive et directives" ,
+    "NAVLIST2": "Test 2 - Accessibilité" ,
+    "SELECT": "Changer de langue",
+    "HOMEHEADER": "Test technique Frontend TD",
+    "HOMEMSG": "La localisation n'a maintenant été appliquée qu'aux textes statiques. La documentation i18n pour angulaire n'inclut pas les valeurs dynamiques.",
+    "HOMEWARNING": "Le changement de langage dynamique a été fait avec Observables"
+  },
+  "TEST1": {
+    "HEADER": "Réserver un rendez-vous",
+    "SUBHEADER": "Nos sujets d'investissement",
+    "INFO": "Choisissez un sujet, puis nous trouverons une heure et un lieu",
+    "RETURN": "Retourner à l'écran précédent"
+  }
+}

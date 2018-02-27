@@ -1,0 +1,17 @@
+
+{
+  "HOME": {
+    "NAVLIST1": "Test 1 - Responsive layout and directives" ,
+    "NAVLIST2": "Test 2 - Accessibility" ,
+    "SELECT": "Change language",
+    "HOMEHEADER": "TD Frontend Technical Test",
+    "HOMEMSG": "Localization has now only been applied for static texts. i18n documentation for angular does not include dynamic values.",
+    "HOMEWARNING": "The dynamic language change has been done with Observables"
+  },
+  "TEST1": {
+    "HEADER": "Book an Appoinment",
+    "SUBHEADER": "Our investing topics",
+    "INFO": "Pick a topic, then we'll find a time and place",
+    "RETURN": "Return to previous screen "
+  }
+}

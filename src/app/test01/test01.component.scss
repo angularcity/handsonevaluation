@@ -1,0 +1,47 @@
+/**********  Variables & mixins ************************/
+
+$primary-theme-btn: #008A00;
+$body-text: #1C1C1C;
+$white-bg : #ffffff;
+$btnWidth: 40%;
+$btnWidthMobile: 100%;
+
+@mixin btnStyle($radius) {
+  border:1px solid $primary-theme-btn;
+  color:$primary-theme-btn;
+  background-color: $white-bg;
+  width:$btnWidth;
+  margin:5px 10px;
+  padding:10px 0px;
+  border-radius: $radius;
+}
+
+@mixin btnLink{
+  color:$primary-theme-btn;
+}
+
+/******************************************************/
+
+.spacer{
+  margin:20px 0px;
+}
+.lead{
+  margin-top:1.5em;
+}
+.td-btn{
+  @include btnStyle(5px);
+  @media only screen and (max-width: 768px){
+    width: $btnWidthMobile !important;
+    margin:10px;
+  }
+}
+.flex-container{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.btn-link {
+  @include btnLink;
+}

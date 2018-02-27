@@ -1,0 +1,32 @@
+<div class="container-fluid">
+
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <header>
+        <h1 class="text-center"> {{ 'TEST1.HEADER' | translate }} </h1>
+        <h4 class="text-center"> {{ 'TEST1.SUBHEADER' | translate }} </h4>
+      </header>
+      <p class="lead text-center"> {{ 'TEST1.INFO' | translate }} </p>
+
+      <main>
+        <div class="row">
+          <div class="flex-container" appEquiheight="td-btn">
+            <button *ngFor="let btnItem of buttonData" type="button" class="td-btn"> {{ btnItem.text }}</button>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <div class="row spacer">
+          <div class="col-xs-12 text-center">
+            <a class="btn btn-link" routerLink="/home" aria-label="Left Align">
+              <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+              {{ 'TEST1.RETURN' | translate }}
+            </a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+</div>

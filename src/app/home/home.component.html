@@ -1,0 +1,107 @@
+<div class="container-fluid">
+  <div class="jumbotron">
+    <div class="container">
+      <p> {{ 'HOME.HOMEHEADER' | translate }} </p>
+      <small> {{ 'HOME.HOMEMSG' | translate }} </small>
+      <br>
+      <small> {{ 'HOME.HOMEWARNING' | translate }} </small>
+    </div>
+  </div>
+  <hr/>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="alert alert-info" role="alert"> Hands on - checklist for both tests</div>
+      <div class="row">
+        <div class="col-md-5">
+          <ul class="list-group">
+            <li class="list-group-item header-text"> Test 1 - Responsive layouts and directives</li>
+            <li class="list-group-item">
+              <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+              The layout has been done with bootstrap 3 and its breakpoints.
+            </li>
+
+            <li class="list-group-item">
+              <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+              Semantic layout has been done for this assigment too, not just the test 2
+            </li>
+
+            <li class="list-group-item">
+              <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+              The button text has been pulled from a json data via HttpClient.
+            </li>
+
+            <li class="list-group-item">
+              <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+              Model has been defined for proper type casting.
+            </li>
+
+            <li class="list-group-item">
+              <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+              Internationalization has been implemented with ng2-translate ( https://github.com/ngx-translate/core). The angular specific
+              internationalization steps is still vague, tedius and doesnt support dynamic texts atleast till Version 6.
+              So relied on Subject & observables to pull in language specific text calling different methods mocking a server
+              API call. Localization is done for french & english.
+            </li>
+
+            <li class="list-group-item">
+              <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+              The layout responds to the designs attached in test. Flexbox layout with sass has been used for the styling.
+            </li>
+
+            <li class="list-group-item">
+              <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+              If there is only one button, it centers in the middle of the screen as the spec mentions.
+            </li>
+
+            <li class="list-group-item">
+              <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+              The button height is adjusted dynamically with directives. The dropdown in the header menu is also a directive. Bootstrap.js
+              is not used for the functionality of opening the dropdown.
+            </li>
+
+            <li class="list-group-item">
+              <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+              Use the dropdown option "Change Language" in the navigation bar to switch between languages.
+            </li>
+          </ul>
+        </div>
+
+
+        <div class="col-md-5 col-md-offset-2">
+          <ul class="list-group">
+            <li class="list-group-item header-text"> Test 2 - Accessibility test</li>
+            <li class="list-group-item">
+              <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+              Basic Accessibility checklists, acceptance criterias, ARIA-ROLES etc has been used along with proper semantics.
+            </li>
+
+            <li class="list-group-item">
+              <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+              Skip links has been added to help the screen reader to switch to transfer option straight thereby skipping other buttons
+              in between.
+            </li>
+
+            <li class="list-group-item">
+              <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+              Each accessibility change has been commented on top as to the reason of that choice.
+            </li>
+
+            <li class="list-group-item">
+              <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+              Submitting the form programmatically focuses the alert model.
+            </li>
+
+            <li class="list-group-item">
+              <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+              The accessibility audit has been done with "Lighthouse" that comes with the Accessibility developer tools in Chrome. It scores
+              a 100 and passes 8 audit tests ( check the attched screenshot )
+              <img class="img-responsive" src="assets/score.jpg" alt="test-results">
+            </li>
+
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

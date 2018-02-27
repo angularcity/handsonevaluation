@@ -1,0 +1,166 @@
+<!-- 1. Screenreader can get a headsup that this is a dialog box and the title
+   can be read from the element with the id of modal-title -->
+
+<div class="test02">
+  <div role="dialog" aria-labelledby="modal-title" class="ngdialog ngdialog-theme-default col-xs-12 col-sm-8 col-md-6 col-lg-6">
+
+    <!-- 2. Since this being a live region, we can use role alert with polite
+    so that the screen reader is notified about this change right after the current activity-->
+
+    <div tabindex="0" class="custom-alert"
+         uib-alert class="alert" role="alert" aria-live="polite"
+     *ngFor="let alert of alerts"
+     [ngClass]="'alert-' + (alert.type || 'warning')" (click)="closeAlert($index)">{{alert.msg}}</div>
+
+     <main>
+    <form class="future-banking">
+
+      <!-- 3. The section act as a banner for the widget -->
+      <section role="banner" class="container-fluid header">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-6">
+
+            <!-- 4. icons are for decorative purposes. They can be used with aria-hidden for Screenreaders -->
+            <i aria-hidden="true" class="fa fa-credit-card fa-2x"></i>
+            <span id="modal-title" class="lead header">Send Transfer</span>
+
+            <!-- 5. skip links are visible on focus only. Lets us skip directly to transfer details. -->
+            <a class="skip-link" href="#transfer-details">Skip to transfer details </a>
+          </div>
+
+          <div class="col-xs-12 col-sm-12 col-md-6">
+            <div class="btn-group" role="group">
+              <button class="btn btn-default">
+                <!-- 6. decorative image- so the alt can be set to empty string -->
+                <img alt="" class="profile-img">
+                <span id="user-name">John Smith</span>
+              </button>
+
+              <!-- 7. button needs a type & icon can be used with aria-hidden -->
+              <button type="button" class="btn btn-default">
+                Sign out
+                <i aria-hidden="true" class="fa fa-sign-out fa-lg"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <hr/>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. this section can have a role of form and insteads of div and span , we have introduced
+        a fieldset, legend and proper form input, label with proper labelling and for attributes
+        against each field making them tabbable. The inputs are readonly as user is not expected
+        to provide input values to them.  -->
+
+      <section role="form" aria-labelledby="from" class="container-fluid" id="account-info">
+        <div class="col-xs-12">
+          <div class="row">
+            <div class="col-xs-12">
+              <fieldset>
+                <legend id="from">From</legend>
+                <form class="form-horizontal">
+                  <div class="form-group bg-gray">
+                    <label for="accName" class="col-sm-6 control-label">Account Name: </label>
+                    <div class="col-sm-6">
+                      <input type="text" readonly="true" class="form-control" id="accName" placeholder="Account Name" value="Checking">
+                    </div>
+                  </div>
+
+                  <div class="form-group bg-gray">
+                    <label for="accNum" class="col-sm-6 control-label">Account Number:</label>
+                    <div class="col-sm-6">
+                      <input type="text" readonly="true" class="form-control" id="accNum" placeholder="Account Number" value="123456789">
+                    </div>
+                  </div>
+
+                  <div class="form-group bg-gray">
+                    <label for="currBal" class="col-sm-6 control-label">Current Balance:</label>
+                    <div class="col-sm-6">
+                      <input type="text" readonly="true" class="form-control" id="currBal" placeholder="Current Balance" value="{{5000 | currency}}">
+                    </div>
+                  </div>
+                </form>
+              </fieldset>
+              <hr/>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--9.  same reasons as above , replacing the existing elements with proper semantics  -->
+      <section role="form" aria-labelledby="txrdtl" class="container-fluid" id="transfer-details">
+          <div class="col-xs-12">
+            <div class="row">
+              <div class="col-xs-12">
+                <fieldset>
+                  <legend id="txrdtl">Transfer Details</legend>
+                  <form class="form-horizontal">
+                    <div class="form-group bg-gray">
+                      <label for="txrAmt" class="col-sm-6 control-label">Amount to Transfer:</label>
+                      <div class="col-sm-6">
+                        <input type="text" class="form-control" id="txrAmt" placeholder="Amount to Transfer" value="{{300 | currency}}">
+                      </div>
+                    </div>
+
+                    <div class="form-group bg-gray">
+                      <label for="freq" class="col-sm-6 control-label">Frequency:</label>
+                      <div class="col-sm-6">
+                          <select id="freq" class="form-control">
+                              <option>Every day</option>
+                              <option>Weekly</option>
+                              <option>Bi-weekly</option>
+                              <option>Monthly</option>
+                            </select>
+                      </div>
+                    </div>
+
+                  </form>
+                </fieldset>
+
+                <hr/>
+
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+
+      <section class="container-fluid" id="send-to-recipient">
+        <div class="col-xs-12">
+          <div class="row">
+            <div class="col-xs-12">
+              <h4>Send to</h4>
+
+              <div class="row">
+                <div class="col-xs-8">
+                  <!-- 10. we can use an src instead of a background image here with alt fallback,
+                  as it would be better to know whom to transfer the cash to, and let the
+                  screen reader read out loud the intended name
+                  The tabindex makes sure the screen reader can access the header and its content -->
+                  <img src="http://i.imgur.com/Y7u78c4.jpg" alt="profile-image-of-user" class="profile-img">
+                  <h3 tabindex="0" id="recipient">Janes Smith</h3>
+                </div>
+                <div class="col-xs-4">
+                  <!-- link can have a title  -->
+                  <a href="/test2" title="change recepient" class="change-user-link">Change recipient</a>
+                </div>
+              </div>
+              <hr/>
+
+              <button type="button"
+              class="btn btn-primary btn-send" (click)="addAlert()">Send {{300 | currency}}</button>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </form>
+  </main>
+  </div>
+</div>
